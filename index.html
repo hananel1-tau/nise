@@ -20,7 +20,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top"><img src="assets/img/logo.jpg" /> NISE </a>
+                <a class="navbar-brand" href="#page-top"><img src="assets/img/logo.jpg" /> NISE Monitoring</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
@@ -53,6 +53,7 @@
                 <div>
                     <h2 class="section-heading text-uppercase text-center">What is NICE?</h2>
                     <h3 class="section-subheading">
+                        <br>
                         Many elderly people who live alone (in private apartments or elderly houses), while still mostly independent, might have some difficulties with day to day activities. Those of them who are having trouble accepting these difficulties or are very privy about their privacy, are often refusing any sort of intrusive monitoring systems, like cameras or any sort of wearable monitoring technology. This refusal often leads to conflicts between them and their families/caregivers, and might result in them not having any monitoring at all.<br><br>
 
                         Our NISE (Non-Intrusive Smart Elderly) Monitoring System provides the elderly with an easy-to-install non-intrusive monitoring system in their house, that doesn't require of them any active actions (like turning on cameras or putting on wearable devices), but still provides them necessary supervision, and their families and caregivers - greater peace of mind over the well-being and safety of their relatives.<br><br>
@@ -80,7 +81,9 @@
                 <div>
                     <h2 class="section-heading text-uppercase text-center">Installation</h2>
                     <h3 class="section-subheading">
+                        <br>
                         Our installation process is very simple:
+                        <br>
                         <ol>
                             <li>The customer receives the devices and a QR code and device ID for each one.</li>
                             <li>The customer scans the QR code on each device, leading them to our website to configure it.</li>
@@ -133,6 +136,7 @@
                 <div>
                     <h2 class="section-heading text-uppercase text-center">Server</h2>
                     <h3 class="section-subheading">
+                        <br>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
                     </h3>
                 </div>
@@ -144,8 +148,10 @@
                 <div>
                     <h2 class="section-heading text-uppercase text-center">Website</h2>
                     <h3 class="section-subheading">
-                        Our website's frontend is written in Typescript with React JS and Material-UI as our design library.<br>
-                        For authentication, we use Auth0 - a secure and adaptable authentication and authorization platform. That way, our users don't have to create a special account to use our services - they can just use their existing Google account.<br>
+                        <br>
+                        Our website's frontend is written in <b>Typescript</b> with <b>React JS</b>, and <b>Material-UI</b> as our design library.<br>
+                        For authentication, we use <b>Auth0</b> - a secure and adaptable authentication and authorization platform. That way, our users don't have to create a special account to use our services - they can just use their existing Google account.<br>
+                        <br>
                         From our website, the users can log into their account and perform the following actions:
                         <ul>
                             <li>Manage the caregiver's and tenant's personal data.</li>
@@ -160,6 +166,9 @@
                             <li>Create, manage and remove alerts.</li>
                         </ul>
                     </h3>
+                    <div">
+                        <img class="img-fluid" src="assets/img/website_blur_screenshot.png" />
+                    </div>
                 </div>
             </div>
         </section>
@@ -172,6 +181,7 @@
                         <img class="img-fluid" src="assets/img/schematics.png" />
                     </div>
                     <div>
+                        <br>
                         <h3 class="section-subheading text-muted">
                             We used an ESP8266 device with one PIR (i.e., motion detection) sensor. Once every half a minute, or when enough events are detected, the device sends the events to the cloud to be processed, which are used to create the alerts.<br><br>
 
@@ -199,14 +209,17 @@
                 <div>
                     <h2 class="section-heading text-uppercase text-center">Challenges & Solutions</h2>
                     <h3 class="section-subheading">
+                        <br>
                         <ul>
                             <li>
-                                The PIR sensor's capture angle: Our PIR sensor has a wide angle. Therefore, it captures movememnt in the general vicinity of it, and not just movement directly in front of it, which is the desired behaviour.<br>
+                                The PIR sensor's capture angle: <br>
+                                Our PIR sensor has a wide angle. Therefore, it captures movememnt in the general vicinity of it, and not just movement directly in front of it, which is the desired behaviour.<br>
                                 Our solution to this problem is to partially "blind" the sensor - we wrap it in a box which blocks everything not in front of it.
                             </li>
                             <br>
                             <li>
-                                The ESP8266 and switching WiFi on & off: Since we want to save battery, we need to switch WiFi off when not transmitting events to the cloud. This sometimes caused the device to crash and restart because of its software watchdog - the ESP8266 has a software watchdog which expects to be signalled every once in a while. This is usually done at the end of the loop, which is quick enough, but transmitting events - which includes connecting to WiFi, connecting to the cloud, sending the events and switching WiFi off - takes too much time.<br>
+                                The ESP8266 and switching WiFi on & off: <br>
+                                Since we want to save battery, we need to switch WiFi off when not transmitting events to the cloud. This sometimes caused the device to crash and restart because of its software watchdog - the ESP8266 has a software watchdog which expects to be signalled every once in a while. This is usually done at the end of the loop, which is quick enough, but transmitting events - which includes connecting to WiFi, connecting to the cloud, sending the events and switching WiFi off - takes too much time.<br>
                                 Our solution to this problem is to signal the software watchdog manually in several points, like after connecting to WiFi and after connecting to the cloud.
                             </li>
                         </ul>
